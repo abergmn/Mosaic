@@ -1,0 +1,26 @@
+Copyright (c) 2025 Aaron Bergmann
+
+Permission is granted to use Mosaic (“the Software”) under the following terms:
+
+1. Usage
+   - You may run, study, and use the Software for personal, research, educational, or internal business purposes.
+   - Commercial use is allowed only for internal purposes or with explicit permission from the copyright holder.
+
+2. Contributions
+   - You may submit contributions to the Software.
+   - By contributing, you grant the maintainers a perpetual, worldwide, non-exclusive, royalty-free license to use, modify, distribute, and sublicense your contributions as part of the Software.
+   - You retain ownership of your contributions, but may not claim Mosaic (or parts of it) as your own work.
+
+3. Redistribution
+   - You may not redistribute, resell, or republish the Software or derivative works as your own.
+   - Copyright and attribution notices must remain intact.
+
+4. Prohibited Actions
+   - Unauthorized testing, scanning, or attacks on systems you do not own or have permission to test.
+   - Copying or claiming the source code as your own.
+
+5. Disclaimer
+   - The Software is provided “AS IS” without warranty of any kind. The copyright holder and contributors are not liable for damages arising from use of the Software.
+
+6. Termination
+   - Violation of these terms terminates your rights to use or contribute to the Software.
