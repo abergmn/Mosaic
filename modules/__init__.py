@@ -1,11 +1,17 @@
-from .port_scan import scan_port, scan_host
-from .grab_banner import grab_banner
-from .network_sweep import ping_host, discover_hosts
+from .banner_grab import grab_banner
+from .discover import is_host_active
+from .port_scan import scan_ports
+from .range import find_range
+from .resolver import resolve_target
+
+from .utils.logging import log_error, log_info
 
 __all__ = [
-    "scan_port",
-    "scan_host",
     "grab_banner",
-    "ping_host",
-    "discover_hosts",
+    "is_host_active",
+    "scan_ports",
+    "find_range",
+    "resolve_target",
+    "log_error",
+    "log_info"
 ]

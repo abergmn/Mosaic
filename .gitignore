@@ -1,2 +1,6 @@
 .vscode/
 output/
+modules/__pycache__
+
+NOTES.md
+WORKFLOW.md
