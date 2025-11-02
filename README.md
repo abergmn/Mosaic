@@ -14,21 +14,46 @@
 
 ---
 
-## Installation
-Mosaic is currently a simple Python project; no packaging is required.
+## Installation & Setup
+Mosaic supports an **automated setup and build process** using a virtual environment.
 
-Clone the repository:
+1. Clone the repository:
 ```bash
-git clone <repo-url>
-cd mosaic
+git clone https://github.com/abergmn/Mosaic.git
+cd Mosaic
 ```
 
-## Usage
-Run Mosaic from the command line<!--with the target host or subnet-->:
+2. Run the environment setup script:
+```bash
+./scripts/setup_env.sh
+```
+
+## Building the Executable
+To build a standalone executable, run:
+```bash
+./scripts/build.sh
+```
+
+- The built executable will be available in the `out/` folder (`./out/Mosaic`).
+- The `.spec` file will also be in `out/`.
+- You no longer need to run Python directly unless testing.
+
+
+## Running Mosaic
+You have two options:
+
+1. From Python (for development/testing):
 ```bash
 python main.py
 ```
 <!-- python main.py --target <host/subnet> -->
+
+
+2. Standalone executable (recommended after build):
+```bash
+./out/Mosaic
+```
+<!-- ./out/Mosaic --target <host/subnet> -->
 
 ---
 
