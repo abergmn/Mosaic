@@ -24,7 +24,7 @@ cd mosaic
 ```
 
 ## Usage
-Run Mosaic from the command line <!--with the target host or subnet-->:
+Run Mosaic from the command line<!--with the target host or subnet-->:
 ```bash
 python main.py
 ```
