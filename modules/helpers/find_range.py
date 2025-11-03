@@ -1,7 +1,7 @@
 """
-range.py
+find_range.py
 
-Module for generating a list of IP addresses to scan
+Helper for generating a list of IP addresses to scan
 based on a single IP or CIDR notation.
 """
 

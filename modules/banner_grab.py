@@ -1,21 +1,22 @@
 """
-banner_grab.py
+port_scan.py
 
-Module for attempting to grab a service banner from
-an open port on a host.
+Module handling the functionality of the 'Banner grabbing only' menu option.
 """
 
-def grab_banner(ip: str, port: int):
+from colorama import Fore
+
+def banner_grab(target: str):
     """
-    Attempt to retrieve a service banner from a host's open port.
+    See docstring at the top of the document for information
+    about this modules functionality...
 
     Args:
-        ip (str): The target host IP address.
-        port (int): The port to attempt a banner grab on.
+        target (str): IP address or hostname
 
     Returns:
-        str | None: The banner string if successfully retrieved,
-                    otherwise None.
+
     """
 
-    return
+    print(f"\n{Fore.CYAN}Running banner grabbing on '{target}'...")
+    print(f"\n{Fore.CYAN}Finished banner grab on '{target}'.")

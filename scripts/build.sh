@@ -37,6 +37,7 @@ if pyinstaller \
     --distpath "$OUT_DIR" \
     --workpath "$WORK_DIR" \
     --specpath "$OUT_DIR" \
+#    --hidden-import=colorama \ <-- figure out...
     "$ROOT_DIR/$ENTRY_POINT"; then
 
     echo "[build]-[LOG]: Build complete! Run with: './out/$APP_NAME'"

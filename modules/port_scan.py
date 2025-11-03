@@ -1,22 +1,22 @@
 """
 port_scan.py
 
-Module for scanning a list of TCP ports on a given host
-and returning which ports are open.
+Module handling the functionality of the 'Port scan only' menu option.
 """
 
-from typing import List
+from colorama import Fore
 
-def scan_ports(ip: str, ports: List[int]) -> List[int]:
+def port_scan(target: str):
     """
-    Scan the specified ports on a host and return the open ports.
+    See docstring at the top of the document for information
+    about this modules functionality...
 
     Args:
-        ip (str): The target IP address.
-        ports (List[int]): A list of TCP ports to scan.
+        
 
     Returns:
-        List[int]: A list of ports that are open on the host.
+
     """
 
-    return
+    print(f"\n{Fore.CYAN}Running port scan on '{target}'...")
+    print(f"\n{Fore.CYAN}Finished port scan on '{target}'.")

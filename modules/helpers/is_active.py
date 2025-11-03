@@ -1,8 +1,7 @@
 """
-discover.py
+is_active.py
 
-Module for checking if a host is active/reachable
-before performing deeper scans.
+Helper for checking if a host is active/reachable.
 """
 
 def is_host_active(ip: str) -> bool:

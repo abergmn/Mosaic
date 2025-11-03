@@ -1,7 +1,7 @@
 """
 resolver.py
 
-Module for resolving a user-provided target (IP or hostname)
+Helper for resolving a user-provided target (IP or hostname)
 into a canonical IP address.
 """
 
