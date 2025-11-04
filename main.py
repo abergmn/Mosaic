@@ -6,13 +6,15 @@ from modules import banner_grab
 from modules.utils import log_info
 from colorama import init, Fore, Style
 
+from typing import Optional
+
 init(autoreset=True)
 
 def print_menu_options() -> None:
     for k, (desc, _, _) in MENU_OPTIONS.items():
         print(f"  {k}. {desc}")
 
-def print_ascii_art() -> None:
+def ui_print_ascii_art() -> None:
     print(f"\n========================================================================")
     print(f"\t{Fore.CYAN}$$\\      $$\\                               $$\\           {Style.RESET_ALL}")
     print(f"\t{Fore.CYAN}$$$\\    $$$ |                              \\__|          {Style.RESET_ALL}")
@@ -59,7 +61,21 @@ MENU_OPTIONS = {
     "q": ("Quit", None, False),
 }
 
-def choose_option() -> None:
+def get_target(last_target: Optional[str]) -> Optional[str]:
+    prompt = "Enter IP/Hostname"
+    if last_target:
+        prompt += f" (press Enter to reuse last {last_target})"
+    target_input = input(f"\n{prompt}\n$>").strip()
+    if not target_input and last_target:
+        print(f"Using previous target: {last_target}")
+        return last_target
+    if not target_input:
+        print("Target required for this action.")
+        return None
+    return target_input
+
+
+def menu_choose_option() -> None:
     last_target = None
 
     while True:
@@ -76,7 +92,7 @@ def choose_option() -> None:
             continue
 
         # user wants out
-        if user_input == "q":
+        if user_input in ("q", "quit", "exit"):
             print(f"{Fore.MAGENTA}Goodbye.")
             return
 
@@ -86,21 +102,10 @@ def choose_option() -> None:
         # NOTE: basically just to account for quitting + adding ability to reuse last input...
         #       options by default should require an argument
         if needs_target:
-            prompt = f"{Fore.YELLOW}Enter IP/Hostname"
-            if last_target:
-                prompt += f" (press Enter to reuse last {last_target})"
-            prompt += f" {Style.RESET_ALL}"
-
-            target_input = input(f"\n{prompt}\n$>").strip()
-            if not target_input and last_target:
-                target = last_target
-                print(f"{Fore.GREEN}Using previous target:{Style.RESET_ALL} {target}")
-            elif not target_input:
-                print(f"{Fore.RED}Target required for this action.")
-                continue
-            else:
-                target = target_input
-                last_target = target
+            target = get_target(last_target)
+        if not target:
+            continue
+        last_target = target
 
         try:
             if needs_target:
@@ -110,13 +115,20 @@ def choose_option() -> None:
         except Exception as e:
             print(f"{Fore.RED}Error running '{desc}': {e}")
 
+        print(f"\n{'-' * 70}\n")
 
 def main():
     log_info("Mosaic program start...")
 
-    print_ascii_art()
+    ui_print_ascii_art()
     print_welcome_message()
-    choose_option()
+
+    # allow Ctrl+C exit
+    try:
+        menu_choose_option()
+    except KeyboardInterrupt:
+        print()
+        log_info("Interrupted. Exiting cleanly.")
 
     log_info("Mosaic program end...")
 
