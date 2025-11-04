@@ -15,14 +15,13 @@
 ---
 
 ## Installation & Setup
-Mosaic supports an **automated setup and build process** using a virtual environment.
 
 1. Clone the repository:
 ```bash
 git clone https://github.com/abergmn/Mosaic.git
 cd Mosaic
 ```
-
+<!--
 2. Run the environment setup script:
 ```bash
 ./scripts/setup_env.sh
@@ -38,9 +37,10 @@ To build a standalone executable, run:
 - The `.spec` file will also be in `out/`.
 - You no longer need to run Python directly unless testing.
 
+-->
 
 ## Running Mosaic
-You have two options:
+<!-- You have two options: -->
 
 1. From Python (for development/testing):
 ```bash
@@ -48,11 +48,12 @@ python main.py
 ```
 <!-- python main.py --target <host/subnet> -->
 
-
+<!--
 2. Standalone executable (recommended after build):
 ```bash
 ./out/Mosaic
 ```
+-->
 <!-- ./out/Mosaic --target <host/subnet> -->
 
 ---
