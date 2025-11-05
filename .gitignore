@@ -1,3 +1,7 @@
+# other
 .vscode/
+
+# pycache
 /modules/__pycache__
+/modules/helpers/__pycache__
 /modules/utils/__pycache__
