@@ -1,18 +1,11 @@
-from modules import full_scan
-from modules import host_discovery
-from modules import port_scan
-from modules import banner_grab
-
+from modules import full_scan, host_discovery, port_scan, banner_grab
 from modules.utils import log_info
-from colorama import init, Fore, Style
 
+from colorama import init, Fore, Style
 from typing import Optional
 
-init(autoreset=True)
 
-def print_menu_options() -> None:
-    for k, (desc, _, _) in MENU_OPTIONS.items():
-        print(f"  {k}. {desc}")
+init(autoreset=True)
 
 def ui_print_ascii_art() -> None:
     print(f"\n========================================================================")
@@ -25,7 +18,7 @@ def ui_print_ascii_art() -> None:
     print(f"\t{Fore.CYAN}$$ | \\_/ $$ |\\$$$$$$  |$$$$$$$  |\\$$$$$$$ |$$ |\\$$$$$$$\\ {Style.RESET_ALL}")
     print(f"\t{Fore.CYAN}\\__|     \\__| \\______/ \\_______/  \\_______|\\__| \\_______|{Style.RESET_ALL}")
     print(f"========================================================================\n")
-    
+
 def print_welcome_message() -> None:
     print(f"{Fore.GREEN}Welcome to Mosaic!{Style.RESET_ALL}\n")
 
@@ -49,7 +42,9 @@ def print_welcome_message() -> None:
     print("  - Hostname: example.com\n")
 
     print(f"{Fore.CYAN}Available scan modes:{Style.RESET_ALL}")
-    print_menu_options()
+    # print menu options
+    for k, (desc, _, _) in MENU_OPTIONS.items():
+        print(f"  {k}. {desc}")
 
     print(f"\n========================================================================\n")
 
@@ -86,15 +81,15 @@ def menu_choose_option() -> None:
             print(f"{Fore.RED}Please enter a choice.")
             continue
 
-        # invalid option
-        if user_input not in MENU_OPTIONS:
-            print(f"{Fore.RED}Invalid choice. Try again.")
-            continue
-
         # user wants out
         if user_input in ("q", "quit", "exit"):
             print(f"{Fore.MAGENTA}Goodbye.")
             return
+
+        # invalid option
+        if user_input not in MENU_OPTIONS:
+            print(f"{Fore.RED}Invalid choice. Try again.")
+            continue
 
         desc, func, needs_target = MENU_OPTIONS[user_input]
         target = None
@@ -117,9 +112,7 @@ def menu_choose_option() -> None:
 
         print(f"\n{'-' * 70}\n")
 
-def main():
-    log_info("Mosaic program start...")
-
+def menu_sys():
     ui_print_ascii_art()
     print_welcome_message()
 
@@ -130,6 +123,9 @@ def main():
         print()
         log_info("Interrupted. Exiting cleanly.")
 
+def main():
+    log_info("Mosaic program start...")
+    menu_sys()
     log_info("Mosaic program end...")
 
 if __name__ == "__main__":
