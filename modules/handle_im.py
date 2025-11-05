@@ -4,7 +4,7 @@ handle_im.py
 Handle the input menu!!!!!!
 """
 
-from . import full_scan, discover_hosts, port_scan, banner_grab
+from . import full_scan, discover_hosts, ports_scan, port_scan, banner_grab
 from .utils import log_error, log_info
 
 from colorama import init, Fore, Style
@@ -68,9 +68,10 @@ def get_target(last_target: Optional[str]) -> Optional[str]:
 
 MENU_OPTIONS = {
     "1": ("Full scan (hosts + ports + banners)", full_scan, True),
-    "2": ("Host discovery only", discover_hosts, True),
-    "3": ("Port scan only", port_scan, True),
-    "4": ("Banner grabbing only", banner_grab, True),
+    "2": ("Host discovery", discover_hosts, True),
+    "3": ("Port(s) scan", ports_scan, True),
+    "4": ("Port scan", port_scan, True),
+    "5": ("Banner grabber", banner_grab, True),
     "q": ("Quit", None, False),
 }
 
@@ -116,7 +117,7 @@ def menu_choose_option() -> None:
 
         print(f"\n{'-' * 70}\n")
 
-def handle_im():
+def handle_im() -> None:
     ui_print_ascii_art()
     print_welcome_message()
 

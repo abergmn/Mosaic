@@ -1,7 +1,7 @@
 """
 port_scan.py
 
-Module handling the functionality of the 'Port scan only' menu option.
+Module handling the functionality of the 'Port scan' menu option.
 """
 
 from colorama import Fore

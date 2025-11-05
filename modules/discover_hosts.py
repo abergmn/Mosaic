@@ -1,7 +1,7 @@
 """
 port_scan.py
 
-Module handling the functionality of the 'Host discovery only' menu option.
+Module handling the functionality of the 'Discover hosts' menu option.
 """
 
 from colorama import Fore

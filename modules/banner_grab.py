@@ -1,7 +1,7 @@
 """
 port_scan.py
 
-Module handling the functionality of the 'Banner grabbing only' menu option.
+Module handling the functionality of the 'Banner grabber' menu option.
 """
 
 from colorama import Fore
