@@ -1,10 +1,11 @@
 """
-port_scan.py
+scan_ports.py
 
 Helper for scanning a list of TCP ports on a given host
 and returning which ports are open.
 """
 
+from .scan_port import scan_port
 from typing import List
 
 def scan_ports(ip: str, ports: List[int]) -> List[int]:
@@ -18,5 +19,5 @@ def scan_ports(ip: str, ports: List[int]) -> List[int]:
     Returns:
         List[int]: A list of ports that are open on the host.
     """
-
+    
     return
