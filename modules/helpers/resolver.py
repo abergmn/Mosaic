@@ -5,7 +5,7 @@ Helper for resolving a user-provided target (IP or hostname)
 into a canonical IP address.
 """
 
-def resolve_target(target: str) -> str:
+def resolve(target: str) -> str:
     """
     Resolve hostname or IPv4 string to IPv4 address.
 

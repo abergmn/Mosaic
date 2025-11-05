@@ -3,7 +3,7 @@ from .is_active import is_host_active
 from .scan_ports import scan_ports
 from .scan_port import scan_port
 from .find_range import find_range
-from .resolver import resolve_target
+from .resolver import resolve
 from ..handle_im import handle_im
 
 __all__ = [
@@ -12,6 +12,6 @@ __all__ = [
     "scan_ports",
     "scan_port",
     "find_range",
-    "resolve_target",
+    "resolve",
     "handle_im"
 ]
